@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+ int a[20],i,n,j,pos,small;
+ cout<<"enter number of elements in array:"<<endl;
+ cin>>n;
+ for(i=0;i<n;i++)
+ {
+  cout<<"enter numbers in array:";
+  cin>>a[i];
+ }
+ for(i = 0; i < n-1; i++)
+ {
+  pos = i; small = a[i];
+  for(j=i+1; j<n; j++) 
+  {
+   if(small > a[j]) 
+	 { 
+    pos = j; 
+    small = a[j]; 
+	 }
+  }
+  a[pos] = a[i]; 
+  a[i] = small; 
+ }
+ cout<<"sorted array is:";
+ for(i=0;i<n;i++)
+ {
+  cout<<" "<<a[i];
+ }
+ return 0;
+}
